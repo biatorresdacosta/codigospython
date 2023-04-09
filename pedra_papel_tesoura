@@ -1,0 +1,43 @@
+from random import randint
+from time import sleep
+ITENS = ('PEDRA', 'PAPEL', 'TESOURA')
+COMPUTADOR = randint(0,2)
+
+print('''
+Qual você escolhe?
+[0] PEDRA 
+[1] PAPEL
+[2] TESOURA
+''')
+
+JOGADOR = int(input())
+
+print('PEDRA...')
+sleep(1)
+print('PAPEL...')
+sleep(1)
+print('OU TESOURA!!!')
+sleep(1)
+
+
+if (JOGADOR > 2 or JOGADOR < 0):
+    print('Opção inválida. Tente novamente.')
+
+else:
+  print('')
+  print('▀▄▀▄▀▄'*5)
+  print(f'\n O computador escolheu {ITENS[COMPUTADOR]} ')
+  print(f' O jogador escolheu {ITENS[JOGADOR]}\n')
+  print('▀▄▀▄▀▄'*5)
+  print('')
+
+  if ((COMPUTADOR == 0 and JOGADOR == 0) or (COMPUTADOR == 1 and JOGADOR == 1) or (COMPUTADOR == 2 and JOGADOR == 2) ):
+      print('Deu EMPATE. \n \n ¯\_( ͡° ͜ʖ ͡°)_/¯  ')
+  elif((COMPUTADOR == 0 and JOGADOR == 2) or (COMPUTADOR == 1 and JOGADOR == 0) or (COMPUTADOR == 2 and JOGADOR == 1)):
+      print('Você PERDEU.\n \n ｡ﾟ･ (>╭╮<) ･ﾟ｡')
+  elif((COMPUTADOR == 2 and JOGADOR == 0) or (COMPUTADOR == 0 and JOGADOR == 1) or (COMPUTADOR == 1 and JOGADOR == 2)):
+      print('Você GANHOU. \n \n ＼(￣▽￣)／')
+  else:
+      pass
+
+  print('\nFIM DO PROGRAMA. \n')
